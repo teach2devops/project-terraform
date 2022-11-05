@@ -13,6 +13,11 @@ resource "aws_vpc" "devops" {
     Name = "devops"
   }
 }
+###   key pair
+resource "aws_key_pair" "deployer" {
+  key_name   = "pre"
+  public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCyXYhdyboonMfK2mj8e+N3oJICXjl/zd0rcIqz0MircNnbmOcm0b9ypbbTNopCDQjbXmmY+BSBoApiFXc4f/elLBNl5xSqMhkqwNWyBuzMzS7nqQ5LOKGOKSdQRwmbfFoFAgEY32hExZpP0ViNvPaY4jTGliX3CbHJxnRVIKaMb0st2qdyu01+0zxafYnNQm8e8aURU1qKtYjiblMPjXPciUFSkbRaiqmMcXHRlqkTxWiYLPC+XAv6BwWXgtWtRumJDzBT3ge2EEBWuWUGlUFBT6KJ51AMVlgFyVkarl3iUhNSG1qYcbvKeht2lQNjarSlzsrlFzPqKZ+6m5RtxTo9 rsa-key-20221105"
+}
 
 # Creating Public Subnets in VPC
 resource "aws_subnet" "devops-public-1" {
